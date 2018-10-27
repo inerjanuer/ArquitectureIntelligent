@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.casasparavacacionar.dto;
+package com.mycompany.casasparavacacionar.persistencia.mock;
 
 /**
  *
  * @author Inerjanuer
  */
-public enum TipoSensor{
-    Interior, Exterior
+public class ServicioPersistenciaMock {
+
+    public ServicioPersistenciaMock() {
+        
+        
+    }
+ 
 }
