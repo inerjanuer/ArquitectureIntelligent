@@ -14,7 +14,7 @@ import java.util.Date;
 class RegistroSensores {
     
     private Date fechaAdicionSensor;
-    
+        
     private Sensor producto;
     
     private int cantidad;
