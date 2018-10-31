@@ -21,48 +21,53 @@ import org.casasparavacacionar.servicio.UsuarioServicio;
 public class UsuarioRecurso {
 
     /**
-     * Method handling HTTP GET requests. The returned object will be sent
-     * to the client as "text/plain" media type.
+     * Method handling HTTP GET requests. The returned object will be sent to
+     * the client as "text/plain" media type.
      *
      * @return String that will be returned as a text/plain response.
      */
     UsuarioServicio servicio = new UsuarioServicio();
-    
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Usuario> getUsuarios(@QueryParam("user") String nombre) {
-        if(nombre != null && nombre.length()> 0){
+        if (nombre != null && nombre.length() > 0) {
             return servicio.getNombreUsuario(nombre);
         }
         return servicio.getUsuarios();
     }
-    
+
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Usuario getUsuario(@PathParam("id") int id) {
         return servicio.getUsuario(id);
     }
-    
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Usuario addUsuario(Usuario usuario){
+    public Usuario addUsuario(Usuario usuario) {
         return servicio.addUsario(usuario);
     }
-    
+
     @DELETE
     @Path("/{id}")
-    public void deleteUsuario(@PathParam("id")int id){
-        servicio.deleteUsuario(id); 
+    public void deleteUsuario(@PathParam("id") int id) {
+        servicio.deleteUsuario(id);
     }
-    
+
     @PUT
     @Path("/{usuarioId}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Usuario updateUsuario(@PathParam("usuarioId") int id, Usuario usuario){
+    public Usuario updateUsuario(@PathParam("usuarioId") int id, Usuario usuario) {
         usuario.setId(id);
         return servicio.updateUsuario(usuario);
+    }
+
+    @Path("/{usuarioId}/adicionar")
+    public AdicionRecurso getAdiciones() {
+        return new AdicionRecurso();
     }
 }

@@ -7,7 +7,9 @@ package org.casasparavacacionar.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -23,17 +25,7 @@ public class Usuario {
     
     private String pass;
     
-    //private String nombre;
-    
-    //private Ciudad ciudad;
-    
-    //private long cedula;
-    
-    //private long telefonoFijo;
-    
-    //private long telefonoMovil;
-    
-    private List<RegistroVentaSensores> ventas = new ArrayList<>();
+    private List<RegistroAdicionSensores> adicion = new ArrayList<>();
 
     public Usuario() {
     }
@@ -68,53 +60,13 @@ public class Usuario {
         this.pass = pass;
     }
     
-    
-
-    /*public String getNombre() {
-        return nombre;
+    @JsonbTransient
+    @XmlTransient
+    public List<RegistroAdicionSensores> getAdicion() {
+        return adicion;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Ciudad getCiudad() {
-        return ciudad;
-    }
-
-    public void setCiudad(Ciudad ciudad) {
-        this.ciudad = ciudad;
-    }
-
-    public long getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(long cedula) {
-        this.cedula = cedula;
-    }
-
-    public long getTelefonoFijo() {
-        return telefonoFijo;
-    }
-
-    public void setTelefonoFijo(long telefonoFijo) {
-        this.telefonoFijo = telefonoFijo;
-    }
-
-    public long getTelefonoMovil() {
-        return telefonoMovil;
-    }
-
-    public void setTelefonoMovil(long telefonoMovil) {
-        this.telefonoMovil = telefonoMovil;
-    }    */
-
-    public List<RegistroVentaSensores> getVentas() {
-        return ventas;
-    }
-
-    public void setVentas(List<RegistroVentaSensores> ventas) {
-        this.ventas = ventas;
+    public void setAdicion(List<RegistroAdicionSensores> ventas) {
+        this.adicion = ventas;
     }
 }

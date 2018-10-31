@@ -7,7 +7,7 @@ package org.casasparavacacionar.dao;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.casasparavacacionar.modelo.RegistroVentaSensores;
+import org.casasparavacacionar.modelo.RegistroAdicionSensores;
 import org.casasparavacacionar.modelo.Usuario;
 import org.casasparavacacionar.servicio.SensorServicio;
 
@@ -27,7 +27,7 @@ public class BaseDeDatosUsuario {
         Usuario user2 = new Usuario(2, "JorgePoveda", "67890");
         Usuario user3 = new Usuario(3, "Chirstian", "24680");
         
-        user1.getVentas().add(new RegistroVentaSensores( 1, "Sensor Optico", 3 ));
+        user1.getAdicion().add(new RegistroAdicionSensores( 1, "Sensor Optico", 3 ));
         
         user.add(user1);
         user.add(user2);
