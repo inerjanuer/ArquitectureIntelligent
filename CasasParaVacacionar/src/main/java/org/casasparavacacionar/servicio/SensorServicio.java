@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
-import org.casasparavacacionar.dao.BaseDeDatos;
+import org.casasparavacacionar.dao.BaseDeDatosSensor;
 import org.casasparavacacionar.modelo.Sensor;
 
 /**
@@ -18,7 +18,7 @@ import org.casasparavacacionar.modelo.Sensor;
  */
 public class SensorServicio {
     
-    private final List<Sensor> listado = BaseDeDatos.getInstancia().getListado();
+    private final List<Sensor> listado = BaseDeDatosSensor.getInstancia().getListado();
     private Calendar creado = new GregorianCalendar();
     
     public List<Sensor> getSensores(){
